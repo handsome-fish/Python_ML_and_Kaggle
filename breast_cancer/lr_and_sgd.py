@@ -43,8 +43,9 @@ X_train, X_test, y_train, y_test = train_test_split(data[column_names[1:10]],
 # 使用逻辑斯蒂回归与随机梯度参数估计两种方法对上述处理后的训练数据进行学习
 # 标准化数据，保证每个维度的特征数据方差为1，均值为0.使得预测结果不会被某些维度过大的特征值而主导
 ss = StandardScaler()
+# 对testData使用和trainData同样的均值、方差、最大最小值等指标进行转换, 从而保证train、test处理方式相同
 X_train = ss.fit_transform(X_train)
-X_test = ss.fit_transform(X_test)
+X_test = ss.transform(X_test)
 
 # 初始化LogisticRegression与SGDClassifier
 lr = LogisticRegression()
