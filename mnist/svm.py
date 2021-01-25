@@ -1,3 +1,6 @@
+# 2.1.1.2 支持向量机
+
+
 from sklearn.datasets import load_digits
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
